@@ -1,0 +1,14 @@
+127.0.0.1 - - [27/Sep/2021:23:07:21 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:07:25 +0530] "GET /EmployeeDemo/login.jsp HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:07:37 +0530] "POST /EmployeeDemo/log HTTP/1.1" 200 223
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:20:52 +0530] "GET /EmployeeDemo/login.jsp HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:22:18 +0530] "POST /EmployeeDemo/log HTTP/1.1" 200 543
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:25:20 +0530] "GET /EmployeeDemo/login.jsp HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:25:28 +0530] "POST /EmployeeDemo/log HTTP/1.1" 200 549
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:29:11 +0530] "GET /EmployeeDemo/login.jsp HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:29:21 +0530] "POST /EmployeeDemo/log HTTP/1.1" 200 475
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:30:24 +0530] "GET /EmployeeDemo/login.jsp HTTP/1.1" 200 335
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:30:32 +0530] "POST /EmployeeDemo/log HTTP/1.1" 200 485
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:47:50 +0530] "GET /EmployeeDemo/EmployeeInsert.jsp HTTP/1.1" 200 133
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:48:02 +0530] "GET /EmployeeDemo/EmployeeInsert.jsp HTTP/1.1" 200 497
+0:0:0:0:0:0:0:1 - - [27/Sep/2021:23:48:30 +0530] "GET /EmployeeDemo/EmployeeInsert.jsp HTTP/1.1" 200 494

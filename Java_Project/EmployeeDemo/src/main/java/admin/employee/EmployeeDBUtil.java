@@ -18,7 +18,7 @@ public class EmployeeDBUtil {
 		//create database connection
 		String url ="jdbc:mysql://localhost:3306/employee";
 		String user = "root";
-		String password1 ="sume1234";
+		String password1 ="1234";
 				
 		//validate database
 		try {
@@ -37,13 +37,15 @@ public class EmployeeDBUtil {
 			if (results.next()){
 				int id = results.getInt(1);
 				String name = results.getString(2);
-				String designation = results.getString(3);
-				String email = results.getString(4);
-				String phone = results.getString(5);
-				String usernameU = results.getString(6);
-				String passwordU = results.getString(7);
+				String address = results.getString(3);
+				String phone = results.getString(4);
+				String email = results.getString(5);
+				String designation = results.getString(6);
+				String birthday = results.getString(7); 
+				String usernameU = results.getString(8);
+				String passwordU = results.getString(9);
 				
-				Employee e = new Employee(id,name,designation,email,phone,usernameU,passwordU);
+				Employee e = new Employee(id,name,address,phone,email,designation,birthday,usernameU,passwordU);
 				emp.add(e);
 			}
 		}
@@ -56,4 +58,40 @@ public class EmployeeDBUtil {
 		return emp;
 		
 	}
-}
+	
+	//insert customer
+	public static boolean insertemployee(String name,String address,String phone,String email,String designation ,String birthday,String username,String password ) {
+		boolean isSuccess = false;
+		
+		//create database connection
+				String url ="jdbc:mysql://localhost:3306/employee";
+				String user = "root";
+				String password1 ="1234";
+				
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					
+					//create connection
+					Connection con = DriverManager.getConnection(url, user, password1); 
+					//create statement
+					Statement state = con.createStatement();
+					
+					String sql = "insert into employee values (0,'"+name+"','"+address+"','"+phone+"','"+email+"','"+designation+"','"+birthday+"','"+username+"','"+password+"')";
+					int rs = state.executeUpdate(sql);
+					
+					if(rs > 0) {
+						isSuccess =true;
+					}else {
+						isSuccess =false;
+					}
+					
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+		
+		return isSuccess;
+	}
+	
+	
+}//end EmployeeDBUtill class

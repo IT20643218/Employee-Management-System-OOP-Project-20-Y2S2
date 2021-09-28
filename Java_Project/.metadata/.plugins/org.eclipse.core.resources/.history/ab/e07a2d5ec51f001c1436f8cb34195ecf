@@ -1,0 +1,52 @@
+package admin.employee;
+
+public class Employee {
+	private int id;
+	private String name;
+	private String designation;
+	private String email;
+	private String phone;
+	private String username;
+	private String password;
+	
+	public Employee(int id, String name, String designation, String email, String phone, String username,
+			String password) {
+		this.id = id;
+		this.name = name;
+		this.designation = designation;
+		this.email = email;
+		this.phone = phone;
+		this.username = username;
+		this.password = password;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	
+}//end class

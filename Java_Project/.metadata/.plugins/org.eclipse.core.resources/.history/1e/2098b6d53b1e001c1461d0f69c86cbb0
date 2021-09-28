@@ -1,0 +1,11 @@
+package admin.employee;
+
+import java.util.List;
+
+public class EmployeeDBUtil {
+
+	public static List<Employee> validate(String userName, String password){
+		
+		
+	}
+}

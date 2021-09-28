@@ -1,0 +1,42 @@
+package admin.employee;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class EmployeeDBUtil {
+
+	public static List<Employee> validate(String userName, String password){
+		
+		ArrayList<Employee> emp = new ArrayList<>();
+		
+		//create database connection
+		String url ="jdbc:mysql://localhost:3306/employee";
+		String user = "root";
+		String password1 ="sume1234";
+				
+		//validate database
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			//create connection
+			Connection con = DriverManager.getConnection(url, user, password1); 
+			//create statement
+			Statement state = con.createStatement();
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		return emp;
+		
+	}
+}

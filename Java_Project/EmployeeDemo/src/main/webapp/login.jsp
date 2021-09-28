@@ -8,10 +8,10 @@
 </head>
 <body>
 	<form action="log" method="post">
-	User Name <input type="text" name="id"><br>
+	User Name <input type="text" name="uid"><br>
 	Password <input type="password" name="pass"><br>
 	
-	<input type="submit",name="submit",vlaue="login">
+	<input type="submit" name="submit" vlaue="login">
 	
 	</form>
 

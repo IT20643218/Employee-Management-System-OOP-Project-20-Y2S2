@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +8,57 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<table>
 <c:forEach var="emp" items ="${EmployeeDetails}">
 
-${emp.id}
+<tr>
+<td>Employee ID :</td>
+<td>${emp.id}</td>
+</tr>
+
+<tr>
+<td>Employee Name :</td>
+<td>${emp.name}</td>
+</tr>
+
+<tr>
+<td>Employee Address :</td>
+<td>${emp.address}</td>
+</tr>
+
+<tr>
+<td>Employee Phone :</td>
+<td>${emp.phone}</td>
+</tr>
+
+<tr>
+<td>Employee Email :</td>
+<td>${emp.email}</td>
+</tr>
+
+<tr>
+<td>Employee Designation :</td>
+<td>${emp.designation}</td>
+</tr>
+
+<tr>
+<td>Employee Birthday :</td>
+<td>${emp.birthday}</td>
+</tr>
+
+
+
+
+<%--= ${emp.id}
 ${emp.name}
 ${emp.designation}
 ${emp.email}
 ${emp.phone}
 ${emp.username}
-${emp.password}
+${emp.password} --%>
 
 </c:forEach>
-
+</table>
 
 </body>
 </html>

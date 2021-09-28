@@ -3,19 +3,23 @@ package admin.employee;
 public class Employee {
 	private int id;
 	private String name;
-	private String designation;
-	private String email;
+	private String address;
 	private String phone;
+	private String email;
+	private String designation;
+	private String birthday;
 	private String username;
 	private String password;
 	
-	public Employee(int id, String name, String designation, String email, String phone, String username,
+	public Employee(int id, String name, String address ,String phone, String email, String designation,String birthday,String username,
 			String password) {
 		this.id = id;
 		this.name = name;
-		this.designation = designation;
-		this.email = email;
+		this.address = address;
 		this.phone = phone;
+		this.email = email;
+		this.designation = designation;
+		this.birthday = birthday;
 		this.username = username;
 		this.password = password;
 	}
@@ -28,16 +32,24 @@ public class Employee {
 		return name;
 	}
 
-	public String getDesignation() {
-		return designation;
+	public String getAddress() {
+		return address;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getDesignation() {
+		return designation;
+	}
+
+	public String getBirthday() {
+		return birthday;
 	}
 
 	public String getUsername() {
@@ -48,5 +60,6 @@ public class Employee {
 		return password;
 	}
 
+	
 	
 }//end class

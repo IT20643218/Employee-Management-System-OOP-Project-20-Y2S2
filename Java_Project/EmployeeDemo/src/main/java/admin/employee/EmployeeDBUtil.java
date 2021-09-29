@@ -1,7 +1,6 @@
 package admin.employee;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -10,29 +9,27 @@ import java.util.List;
 
 
 public class EmployeeDBUtil {
+	
+	//link connection (DBConnect class)
+	private static Connection con =null;
+	private static Statement state=null;
+	private static ResultSet results=null;
+	private static boolean isSuccess;
 
 	public static List<Employee> validate(String userName, String password){
 		
 		ArrayList<Employee> emp = new ArrayList<>();
-		
-		//create database connection
-		String url ="jdbc:mysql://localhost:3306/employee";
-		String user = "root";
-		String password1 ="1234";
-				
+						
 		//validate database
 		try {
+			//create database connection			
+			con = DBConnect.getConnection();
+			state = con.createStatement();
 			
-			Class.forName("com.mysql.jdbc.Driver");
-			
-			//create connection
-			Connection con = DriverManager.getConnection(url, user, password1); 
-			//create statement
-			Statement state = con.createStatement();
 			//sql quarry
 			String sql = "select * from employee where username='"+userName+"'and password='"+password+"'";
 			//run quarry
-			ResultSet results  = state.executeQuery(sql);
+			results =state.executeQuery(sql);
 			
 			if (results.next()){
 				int id = results.getInt(1);
@@ -52,29 +49,21 @@ public class EmployeeDBUtil {
 		catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+	
 		return emp;
 		
 	}
 	
 	//insert customer
 	public static boolean insertemployee(String name,String address,String phone,String email,String designation ,String birthday,String username,String password ) {
-		boolean isSuccess = false;
 		
-		//create database connection
-				String url ="jdbc:mysql://localhost:3306/employee";
-				String user = "root";
-				String password1 ="1234";
-				
+		boolean isSuccess = false;
+						
 				try {
-					Class.forName("com.mysql.jdbc.Driver");
 					
-					//create connection
-					Connection con = DriverManager.getConnection(url, user, password1); 
-					//create statement
-					Statement state = con.createStatement();
+					//create database connection
+					con = DBConnect.getConnection();
+					state =con.createStatement();
 					
 					String sql = "insert into employee values (0,'"+name+"','"+address+"','"+phone+"','"+email+"','"+designation+"','"+birthday+"','"+username+"','"+password+"')";
 					int rs = state.executeUpdate(sql);
@@ -93,5 +82,32 @@ public class EmployeeDBUtil {
 		return isSuccess;
 	}
 	
+	//update customer
+	public static boolean updatecustomer(String id,String name,String address,String phone,String email,String designation,
+			String birthday,String username,String password) {
+		
+		try {
+			//create database connection
+			con = DBConnect.getConnection();
+			state = con.createStatement();
+			//Sql quary
+			String sql ="update employee set name='"+name+"',address='"+address+"',phone='"+phone+"',email='"+email+"',designation='"+designation+"',username='"+username+"',password='"+password+"'"
+					+"where id ='"+id+"'"; 
+			//execute quary
+			int rs = state.executeUpdate(sql);
+			
+			if (rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}//end updatecustomer method
 	
 }//end EmployeeDBUtill class

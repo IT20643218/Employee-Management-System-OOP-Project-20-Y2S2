@@ -8,8 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<table>
 <c:forEach var="emp" items ="${EmployeeDetails}">
+
+<c:set var="id" value="${emp.id}"/>
+<c:set var="name" value="${emp.name}"/>
+<c:set var="address" value="${emp.address}"/>
+<c:set var="phone" value="${emp.phone}"/>
+<c:set var="email" value="${emp.email}"/>
+<c:set var="designation" value="${emp.designation}"/>
+<c:set var="birthday" value="${emp.birthday}"/>
+<c:set var="username" value="${emp.username}"/>
+<c:set var="password" value="${emp.password}"/>
 
 <tr>
 <td>Employee ID :</td>
@@ -59,6 +70,24 @@ ${emp.password} --%>
 
 </c:forEach>
 </table>
+
+<c:url value="UpdateEmployee.jsp" var="employeeupdate" >
+	<c:param name="id" value="${id}"/>
+	<c:param name="name" value="${name}"/>
+	<c:param name="address" value="${address}"/>
+	<c:param name="phone" value="${phone}"/>
+	<c:param name="email" value="${email}"/>
+	<c:param name="designation" value="${designation}"/>
+	<c:param name="birthday" value="${birthday}"/>
+	<c:param name="username" value="${username}"/>
+	<c:param name="password" value="${password}"/>
+	
+</c:url>
+
+<%--=detect update page--%>
+<a href ="${employeeupdate}"> 
+<input type="button" name="update" value="Update My Data"><br>
+</a>
 
 </body>
 </html>

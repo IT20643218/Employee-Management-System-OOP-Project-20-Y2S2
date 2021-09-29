@@ -27,5 +27,16 @@
           	<url-pattern>/insert</url-pattern>
           </servlet-mapping>
           
+          <servlet>
+         	<servlet-name>UpdateEmployee</servlet-name>
+         	<servlet-class>admin.employee.UpdateEmployeeServlet</servlet-class>
+          </servlet>
+         
+         <servlet-mapping>
+          	<servlet-name>UpdateEmployee</servlet-name>
+          	<url-pattern>/update</url-pattern>
+          </servlet-mapping>
+          
+          
          </web-app>
         

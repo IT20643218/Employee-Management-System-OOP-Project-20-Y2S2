@@ -88,6 +88,24 @@ ${emp.password} --%>
 <a href ="${employeeupdate}"> 
 <input type="button" name="update" value="Update My Data"><br>
 </a>
+<br>
+
+<%--Delete account --%>
+<c:url value="DeleteEmployee.jsp" var="empdelete">
+	<c:param name="id" value="${id}"/>
+	<c:param name="name" value="${name}"/>
+	<c:param name="address" value="${address}"/>
+	<c:param name="phone" value="${phone}"/>
+	<c:param name="email" value="${email}"/>
+	<c:param name="designation" value="${designation}"/>
+	<c:param name="birthday" value="${birthday}"/>
+	<c:param name="username" value="${username}"/>
+	<c:param name="password" value="${password}"/>
+	
+</c:url>
+<a href="${empdelete}">
+<input type="button" name="delete" value="Delete Employee Account">
+</a>
 
 </body>
 </html>

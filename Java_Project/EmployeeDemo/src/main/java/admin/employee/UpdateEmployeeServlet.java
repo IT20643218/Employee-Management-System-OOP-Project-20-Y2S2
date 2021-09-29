@@ -1,6 +1,7 @@
 package admin.employee;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,7 +20,7 @@ public class UpdateEmployeeServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
-		String phonenumber = request.getParameter("phonenumber");
+		String phonenumber = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String designation = request.getParameter("designation");
 		String birthday = request.getParameter("birthday");
@@ -31,11 +32,17 @@ public class UpdateEmployeeServlet extends HttpServlet {
 		isTrue = EmployeeDBUtil.updatecustomer(id, name, address, phonenumber, email, designation, birthday, username, password);
 		
 		if(isTrue ==true) {
-			RequestDispatcher di = request.getRequestDispatcher("success.jsp");
+			List<Employee> EmployeeDetails = EmployeeDBUtil.getEmployeeDetails(id);
+			request.setAttribute("EmployeeDetails" ,EmployeeDetails);
+			
+			RequestDispatcher di = request.getRequestDispatcher("EmployeeAccount.jsp");
 			di.forward(request, response);
 		}
 		else {
-			RequestDispatcher di2 = request.getRequestDispatcher("unsuccess.jsp");
+			List<Employee> EmployeeDetails = EmployeeDBUtil.getEmployeeDetails(id);
+			request.setAttribute("EmployeeDetails" ,EmployeeDetails);
+			
+			RequestDispatcher di2 = request.getRequestDispatcher("EmployeeAccount.jsp");
 			di2.forward(request, response);
 		}
 	}

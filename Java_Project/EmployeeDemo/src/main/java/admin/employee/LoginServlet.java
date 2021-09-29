@@ -1,6 +1,7 @@
 package admin.employee;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -22,21 +23,31 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//Display javascript error
+		PrintWriter out = response.getWriter();
+		response.setContentType("text/html");
+		
 		//catch u_name and password from login page
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
 		
-		try {
-			//call employeeDButil validate
-			List<Employee> EmployeeDetails = EmployeeDBUtil.validate(username, password);
-			request.setAttribute("EmployeeDetails", EmployeeDetails);	
-		}
-		catch(Exception e){
-			e.printStackTrace();
+		boolean isTrue;
+		
+		isTrue = EmployeeDBUtil.validate(username, password);
+		
+		if(isTrue == true) {
+			List<Employee> EmployeeDetails = EmployeeDBUtil.getEmployee(username);
+			request.setAttribute("EmployeeDetails", EmployeeDetails);
+			
+			RequestDispatcher dis = request.getRequestDispatcher("EmployeeAccount.jsp"); 
+			dis.forward(request, response);
+			
+		}else {
+			out.println("<script type ='text/javascript'>");
+			out.println("alert('Your Username or Password is incorrect');");
+			out.println("location='login.jsp'");
+			out.println("</script>");
 		}
 		
-		RequestDispatcher dis = request.getRequestDispatcher("EmployeeAccount.jsp"); 
-		dis.forward(request, response);
 	}
-
 }

@@ -6,12 +6,23 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+
 <body>
 	<form action="log" method="post">
-	User Name <input type="text" name="uid"><br>
-	Password <input type="password" name="pass"><br>
+	<table>
+	<tr>
+		<td>User Name</td>
+		<td><input type="text" name="uid" placeholder="Enter your username"></td>
+	</tr>
 	
-	<input type="submit" name="submit" vlaue="login">
+	<tr>
+		<td>Password</td>
+		<td><input type="password" name="pass" placeholder="Enter your password"></td>
+	</tr>
+	</table>
+	
+	<input type="submit" name="submit" value="Submit">
 	
 	</form>
 

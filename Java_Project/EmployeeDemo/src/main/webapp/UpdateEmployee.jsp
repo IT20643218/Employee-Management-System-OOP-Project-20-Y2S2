@@ -21,16 +21,54 @@
 %>
 
 <form action="update" method ="post">
-Employee ID <input type="text" name="id" value="<%=id %>" readonly ><br>
-Employee Name <input type="text" name="name" value ="<%=name %>"><br>
-Employee Address <input type="text" name="address" value ="<%=address %>"><br>
-Employee Phone Number <input type="text" name="phone" value ="<%=phonenumber %>"><br>
-Employee Email <input type ="text" name="email" value="<%=email %>"><br>
-Employee Designation <input type="text" name="designation" value="<%=designation %>"><br>
-Employee Birthday <input type="text" name="birthday" value="<%=birthday %>"><br>
-Employee User Name <input type="text" name="username" value="<%=username %>"><br>
-Employee Password <input type="password" name="password" value="<%=password %>"><br>
+<table>
+<tr>
+<td>Employee ID</td>
+<td><input type="text" name="id" value="<%=id %>" readonly ></td>
+</tr>
 
+<tr>
+<td>Employee Name</td> 
+<td><input type="text" name="name" value ="<%=name %>"></td>
+</tr>
+
+<tr>
+<td>Employee Address</td> 
+<td><input type="text" name="address" value ="<%=address %>"></td>
+</tr>
+
+<tr>
+<td>Employee Phone Number</td>
+<td><input type="text" name="phone" value ="<%=phonenumber %>"></td>
+</tr>
+
+<tr>
+<td>Employee Email</td>
+<td><input type ="text" name="email" value="<%=email %>"></td>
+</tr>
+
+<tr>
+<td>Employee Designation</td>
+<td><input type="text" name="designation" value="<%=designation %>"></td>
+</tr>
+
+<tr>
+<td>Employee Birthday</td>
+<td><input type="text" name="birthday" value="<%=birthday %>"></td>
+</tr>
+
+<tr>
+<td>Employee User Name</td>
+<td><input type="text" name="username" value="<%=username %>"></td>
+</tr>
+
+<tr>
+<td>Employee Password</td>
+<td><input type="password" name="password" value="<%=password %>"></td>
+</tr>
+
+
+</table>
 <input type="submit" name="submit" value="Update My Data"><br>
 
 </form>

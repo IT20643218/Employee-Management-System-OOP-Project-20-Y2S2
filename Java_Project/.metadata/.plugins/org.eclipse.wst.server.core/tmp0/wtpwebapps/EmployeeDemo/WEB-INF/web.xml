@@ -37,6 +37,15 @@
           	<url-pattern>/update</url-pattern>
           </servlet-mapping>
           
+          <servlet>
+         	<servlet-name>DeleteEmployee</servlet-name>
+         	<servlet-class>admin.employee.DeleteEmployeeServlet</servlet-class>
+          </servlet>
+         
+         <servlet-mapping>
+          	<servlet-name>DeleteEmployee</servlet-name>
+          	<url-pattern>/delete</url-pattern>
+          </servlet-mapping>
           
          </web-app>
         

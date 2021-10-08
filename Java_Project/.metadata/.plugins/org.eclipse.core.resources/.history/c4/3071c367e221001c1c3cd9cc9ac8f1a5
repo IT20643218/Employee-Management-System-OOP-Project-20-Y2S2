@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+input.body{
+	margin:0;
+	padding:0;
+	background:url(login.jpg);
+	background-size:cover;
+	background-position:center;
+	font-family:sans-serif;
+	
+}

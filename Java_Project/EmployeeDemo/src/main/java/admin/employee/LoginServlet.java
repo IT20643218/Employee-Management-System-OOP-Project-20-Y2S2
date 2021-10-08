@@ -30,10 +30,10 @@ public class LoginServlet extends HttpServlet {
 		//catch u_name and password from login page
 		String username = request.getParameter("uid");
 		String password = request.getParameter("pass");
-		
+		String usertype = request.getParameter("gender");
 		boolean isTrue;
 		
-		isTrue = EmployeeDBUtil.validate(username, password);
+		isTrue = EmployeeDBUtil.validate(username, password,usertype);
 		
 		if(isTrue == true) {
 			List<Employee> EmployeeDetails = EmployeeDBUtil.getEmployee(username);
@@ -41,8 +41,8 @@ public class LoginServlet extends HttpServlet {
 			
 			RequestDispatcher dis = request.getRequestDispatcher("EmployeeAccount.jsp"); 
 			dis.forward(request, response);
-			
-		}else {
+						
+		}else {	
 			out.println("<script type ='text/javascript'>");
 			out.println("alert('Your Username or Password is incorrect');");
 			out.println("location='login.jsp'");

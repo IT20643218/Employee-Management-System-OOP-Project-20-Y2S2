@@ -17,7 +17,7 @@ public class EmployeeDBUtil {
 	private static boolean isSuccess;
 	private static ResultSet rs;
 	
-	public static boolean validate (String username, String password) {
+	public static boolean validate (String username, String password,String usertype) {
 		
 		//validate database
 		try {
@@ -25,7 +25,7 @@ public class EmployeeDBUtil {
 			con = DBConnect.getConnection();
 			state = con.createStatement();
 			//sql quarry
-			String sql = "select * from employee where username='"+username+"'and password='"+password+"'";
+			String sql = "select * from employee where username='"+username+"'and password='"+password+"'and usertype='"+usertype+"'";
 			//run quarry
 			results =state.executeQuery(sql);
 			
@@ -192,4 +192,6 @@ public class EmployeeDBUtil {
 		}
 		return isSuccess;
 	}
+	
+	
 }//end EmployeeDBUtill class

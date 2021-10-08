@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Update Employee Table</title>
 </head>
 <body>
-
+<h1>Update Employee Table</h1>
 <%
 	String id = request.getParameter("id");
 	String name = request.getParameter("name");

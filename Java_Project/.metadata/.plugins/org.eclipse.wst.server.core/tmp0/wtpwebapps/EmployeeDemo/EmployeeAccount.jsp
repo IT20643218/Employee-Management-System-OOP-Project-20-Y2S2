@@ -7,8 +7,9 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<h1>Employee Profile</h1>
 
+<body>
 	<table>
 <c:forEach var="emp" items ="${EmployeeDetails}">
 
@@ -22,6 +23,7 @@
 <c:set var="username" value="${emp.username}"/>
 <c:set var="password" value="${emp.password}"/>
 
+	
 <tr>
 <td>Employee ID :</td>
 <td>${emp.id}</td>
@@ -56,7 +58,6 @@
 <td>Employee Birthday :</td>
 <td>${emp.birthday}</td>
 </tr>
-
 
 
 

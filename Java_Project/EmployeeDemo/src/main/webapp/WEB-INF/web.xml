@@ -9,7 +9,7 @@
          
          <servlet>
          	<servlet-name>login</servlet-name>
-         	<servlet-class>admin.employee.LoginServlet</servlet-class>
+         	<servlet-class>admin.employee.servlet.LoginServlet</servlet-class>
           </servlet>
           
           <servlet-mapping>
@@ -29,7 +29,7 @@
           
           <servlet>
          	<servlet-name>UpdateEmployee</servlet-name>
-         	<servlet-class>admin.employee.UpdateEmployeeServlet</servlet-class>
+         	<servlet-class>admin.employee.servlet.UpdateEmployeeServlet</servlet-class>
           </servlet>
          
          <servlet-mapping>
@@ -39,7 +39,7 @@
           
           <servlet>
          	<servlet-name>DeleteEmployee</servlet-name>
-         	<servlet-class>admin.employee.DeleteEmployeeServlet</servlet-class>
+         	<servlet-class>admin.employee.servlet.DeleteEmployeeServlet</servlet-class>
           </servlet>
          
          <servlet-mapping>

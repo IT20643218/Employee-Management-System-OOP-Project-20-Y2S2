@@ -6,11 +6,24 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "View/profile.css" />
+   
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "View/Template.css" />
+      
+   
 </head>
-<h1>Employee Profile</h1>
+<h1> <center> Employee Profile</center></h1>
 
 <body>
-	<table>
+<img alt="#" src="Image/profile.jsp">
+
+	<table class="center">
+	
 <c:forEach var="emp" items ="${EmployeeDetails}">
 
 <c:set var="id" value="${emp.id}"/>
@@ -59,16 +72,6 @@
 <td>${emp.birthday}</td>
 </tr>
 
-
-
-<%--= ${emp.id}
-${emp.name}
-${emp.designation}
-${emp.email}
-${emp.phone}
-${emp.username}
-${emp.password} --%>
-
 </c:forEach>
 </table>
 
@@ -86,10 +89,15 @@ ${emp.password} --%>
 </c:url>
 
 <%--=detect update page--%>
-<a href ="${employeeupdate}"> 
-<input type="button" name="update" value="Update My Data"><br>
-</a>
+
+<div class="sidenav">
+<a href ="${employeeupdate}">Update My Details</a>
+
+<a href="${empdelete}">Remove Employee</a> 
+
+<a href="EmployeeAdd.jsp">Add Employee</a>
 <br>
+</div>
 
 <%--Delete account --%>
 <c:url value="DeleteEmployee.jsp" var="empdelete">
@@ -104,9 +112,8 @@ ${emp.password} --%>
 	<c:param name="password" value="${password}"/>
 	
 </c:url>
-<a href="${empdelete}">
-<input type="button" name="delete" value="Delete Employee Account">
-</a>
+
+
 
 </body>
 </html>

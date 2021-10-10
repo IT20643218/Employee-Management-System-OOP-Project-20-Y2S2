@@ -17,7 +17,7 @@
       
    
 </head>
-<h1> <center> Employee Profile</center></h1>
+<h1> <center> EMP Management System </center></h1>
 
 <body>
 <img alt="#" src="Image/profile.jsp">
@@ -96,6 +96,8 @@
 <a href="${empdelete}">Remove Employee</a> 
 
 <a href="EmployeeAdd.jsp">Add Employee</a>
+
+<a href="LoginKPIDashboard.jsp">KPI Dash Board</a>
 <br>
 </div>
 

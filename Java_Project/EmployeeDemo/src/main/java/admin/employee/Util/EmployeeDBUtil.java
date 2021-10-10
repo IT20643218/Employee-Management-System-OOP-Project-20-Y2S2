@@ -1,6 +1,7 @@
 package admin.employee.Util;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.List;
 
 import admin.employee.DBConnect;
 import admin.employee.Employee;
+import admin.employee.KPIDetails;
 
 
 
@@ -196,5 +198,79 @@ public class EmployeeDBUtil {
 		return isSuccess;
 	}
 	
+	//Add employee KPI
+public static boolean addemployee(int id,String name,String basicsalary,String monthlytarget,String targetachivement) {
+		
+		boolean Success = false;
+		
+		//create database connection
+		String url ="jdbc:mysql://localhost:3306/employee";
+		String username = "root";
+		String password = "1234";
+						
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					con = DriverManager.getConnection(url, username, password);
+					Statement st = con.createStatement();
+					
+					String sql = "insert into empkpi values (0,'"+name+"','"+basicsalary+"','"+monthlytarget+"','"+targetachivement+"')";
+					int rs = st.executeUpdate(sql);
+					
+					if(rs > 0) {
+						Success =true;
+					}else {
+						Success =false;
+					}
+					
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+		
+		return Success;
+	}
+	
+	//Employee KPI
+	public static List<KPIDetails> validate(String userName,String passWord){
+				
+		ArrayList<KPIDetails> kpi = new ArrayList<>();
+				
+				/*//create database connection
+				String url ="jdbc:mysql://localhost:3306/employee";
+				String username = "root";
+				String password = "1234";*/
+				
+				
+				//validate connection
+				try {
+					
+					/*Class.forName("com.mysql.jdbc.Driver");
+					
+					Connection con = DriverManager.getConnection(url, username, password);
+					Statement st = con.createStatement();
+					*/
+					con = DBConnect.getConnection();
+					state = con.createStatement();
+					
+					String sql ="select * from empkpi where username='"+userName+"' and password='"+passWord+"'";
+					ResultSet rs = state.executeQuery(sql);
+					
+					if(rs.next()) {
+						String username = rs.getString(1);
+						String password = rs.getString(2);
+						String basicsalary = rs.getString(3);
+						String monthlytarget = rs.getString(4);
+						String targetachivment = rs.getString(5);
+						
+						KPIDetails k = new KPIDetails(username,password,basicsalary,monthlytarget,targetachivment);
+						kpi.add(k);
+					}
+				}catch(Exception e) {
+					
+					e.printStackTrace();
+				}
+				
+				return kpi;
+	}
 	
 }//end EmployeeDBUtill class

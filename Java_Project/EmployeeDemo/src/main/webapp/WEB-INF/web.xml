@@ -47,5 +47,25 @@
           	<url-pattern>/delete</url-pattern>
           </servlet-mapping>
           
+          <servlet>
+         	<servlet-name>AddEmployee</servlet-name>
+         	<servlet-class>admin.employee.servlet.EmployeeServlet</servlet-class>
+          </servlet>
+         
+         <servlet-mapping>
+          	<servlet-name>AddEmployee</servlet-name>
+          	<url-pattern>/Add</url-pattern>
+          </servlet-mapping>
+          
+          <servlet>
+         	<servlet-name>LoginKPI</servlet-name>
+         	<servlet-class>admin.employee.servlet.LoginKPIServlet</servlet-class>
+          </servlet>
+         
+         <servlet-mapping>
+          	<servlet-name>LoginKPI</servlet-name>
+          	<url-pattern>/KPI</url-pattern>
+          </servlet-mapping>
+          
          </web-app>
         

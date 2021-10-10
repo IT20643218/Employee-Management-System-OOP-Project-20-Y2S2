@@ -31,7 +31,7 @@
         </div>
         <p>
 		
-		<label class="radio-inline">
+	  <label class="radio-inline">
 		<input type="radio" style="width:25%" name="gender" value="Admin" required>Admin
 		</label>
 		
@@ -39,7 +39,7 @@
 		<input type="radio" style="width:25%" name="gender" value="Employee"  required>Employee
 		</label>
 		</p>
-		<br>
+		<br> 
 		
         <input class="ab" type="submit" name="submit" value="Login">
         <div class="signup_link">

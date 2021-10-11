@@ -98,6 +98,8 @@
 <a href="EmployeeAdd.jsp">Add Employee</a>
 
 <a href="LoginKPIDashboard.jsp">KPI Dash Board</a>
+
+<a href="AddKPI.jsp">Add KPI Details</a>
 <br>
 </div>
 

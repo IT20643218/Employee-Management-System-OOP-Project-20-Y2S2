@@ -48,12 +48,12 @@
           </servlet-mapping>
           
           <servlet>
-         	<servlet-name>AddEmployee</servlet-name>
-         	<servlet-class>admin.employee.servlet.EmployeeServlet</servlet-class>
+         	<servlet-name>AddKPI</servlet-name>
+         	<servlet-class>admin.employee.servlet.AddKPIServlet</servlet-class>
           </servlet>
          
          <servlet-mapping>
-          	<servlet-name>AddEmployee</servlet-name>
+          	<servlet-name>AddKPI</servlet-name>
           	<url-pattern>/Add</url-pattern>
           </servlet-mapping>
           

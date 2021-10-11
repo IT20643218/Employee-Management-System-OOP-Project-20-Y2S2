@@ -198,57 +198,13 @@ public class EmployeeDBUtil {
 		return isSuccess;
 	}
 	
-	//Add employee KPI
-public static boolean addemployee(int id,String name,String basicsalary,String monthlytarget,String targetachivement) {
-		
-		boolean Success = false;
-		
-		//create database connection
-		String url ="jdbc:mysql://localhost:3306/employee";
-		String username = "root";
-		String password = "1234";
-						
-				try {
-					Class.forName("com.mysql.jdbc.Driver");
-					con = DriverManager.getConnection(url, username, password);
-					Statement st = con.createStatement();
-					
-					String sql = "insert into empkpi values (0,'"+name+"','"+basicsalary+"','"+monthlytarget+"','"+targetachivement+"')";
-					int rs = st.executeUpdate(sql);
-					
-					if(rs > 0) {
-						Success =true;
-					}else {
-						Success =false;
-					}
-					
-				}
-				catch(Exception e) {
-					e.printStackTrace();
-				}
-		
-		return Success;
-	}
-	
 	//Employee KPI
 	public static List<KPIDetails> validate(String userName,String passWord){
 				
 		ArrayList<KPIDetails> kpi = new ArrayList<>();
 				
-				/*//create database connection
-				String url ="jdbc:mysql://localhost:3306/employee";
-				String username = "root";
-				String password = "1234";*/
-				
-				
-				//validate connection
 				try {
 					
-					/*Class.forName("com.mysql.jdbc.Driver");
-					
-					Connection con = DriverManager.getConnection(url, username, password);
-					Statement st = con.createStatement();
-					*/
 					con = DBConnect.getConnection();
 					state = con.createStatement();
 					
@@ -272,5 +228,31 @@ public static boolean addemployee(int id,String name,String basicsalary,String m
 				
 				return kpi;
 	}
+	
+	//Add employee KPI
+	public static boolean addkpi(String username,String password,String basicsalary,String monthlytarget,String targetachivement,String monthlyincentive) {
+			
+			boolean Success = false;
+										
+					try {
+						con= DBConnect.getConnection();
+						state=con.createStatement();
+						
+						String sql = "insert into empkpi values ('"+username+"','"+password+"','"+basicsalary+"','"+monthlytarget+"','"+targetachivement+"','"+monthlyincentive+"')";
+						int rs = state.executeUpdate(sql);
+						
+						if(rs > 0) {
+							Success =true;
+						}else {
+							Success =false;
+						}
+						
+					}
+					catch(Exception e) {
+						e.printStackTrace();
+					}
+			
+			return Success;
+		}
 	
 }//end EmployeeDBUtill class

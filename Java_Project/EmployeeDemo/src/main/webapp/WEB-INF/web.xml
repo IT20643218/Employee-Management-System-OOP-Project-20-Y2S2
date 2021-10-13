@@ -17,6 +17,7 @@
           	<url-pattern>/log</url-pattern>
           </servlet-mapping>
          
+          
          <servlet>
          	<servlet-name>EmployeeAdd</servlet-name>
          	<servlet-class>admin.employee.EmployeeAdd</servlet-class>
@@ -27,6 +28,7 @@
           	<url-pattern>/insert</url-pattern>
           </servlet-mapping>
           
+         
           <servlet>
          	<servlet-name>UpdateEmployee</servlet-name>
          	<servlet-class>admin.employee.servlet.UpdateEmployeeServlet</servlet-class>
@@ -44,9 +46,21 @@
          
          <servlet-mapping>
           	<servlet-name>DeleteEmployee</servlet-name>
-          	<url-pattern>/delete</url-pattern>
+          	<url-pattern>/delete_main</url-pattern>
           </servlet-mapping>
           
+          
+           
+          <servlet>
+         	<servlet-name>LoginKPI</servlet-name>
+         	<servlet-class>admin.employee.servlet.LoginKPIServlet</servlet-class>
+          </servlet>
+         
+         <servlet-mapping>
+          	<servlet-name>LoginKPI</servlet-name>
+          	<url-pattern>/KPI01</url-pattern>
+          </servlet-mapping>
+           
           <servlet>
          	<servlet-name>AddKPI</servlet-name>
          	<servlet-class>admin.employee.servlet.AddKPIServlet</servlet-class>
@@ -57,15 +71,28 @@
           	<url-pattern>/Add</url-pattern>
           </servlet-mapping>
           
+          
+           
           <servlet>
-         	<servlet-name>LoginKPI</servlet-name>
-         	<servlet-class>admin.employee.servlet.LoginKPIServlet</servlet-class>
+         	<servlet-name>updateKPI</servlet-name>
+         	<servlet-class>admin.employee.servlet.UpdateKPIServlet</servlet-class>
           </servlet>
          
          <servlet-mapping>
-          	<servlet-name>LoginKPI</servlet-name>
-          	<url-pattern>/KPI</url-pattern>
+          	<servlet-name>updateKPI</servlet-name>
+          	<url-pattern>/kpiupdate</url-pattern>
           </servlet-mapping>
+          
+           <servlet>
+         	<servlet-name>deleteKPI</servlet-name>
+         	<servlet-class>admin.employee.servlet.DeleteKPIServlet</servlet-class>
+          </servlet>
+         
+         <servlet-mapping>
+          	<servlet-name>deleteKPI</servlet-name>
+          	<url-pattern>/delete_KPI</url-pattern>
+          </servlet-mapping>
+         
           
          </web-app>
         

@@ -1,0 +1,71 @@
+/* background image */
+body{
+	background-image : url("background3.jpg");
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:100% 100% ;
+	
+}
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+ 
+    width : 80% ;
+	margin : auto ;
+	padding : 20px ;
+	background : rgba(0,0,0,0.7);
+	font-size : 14px ;
+	font-family : verdana;
+	color : white ;
+	margin-top: 100px;
+	margin-right:5px;
+}
+h1{
+	color : lightblue ;
+}
+p{
+	color : red ;
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.LeaveRequestButton {
+  background-color: #c9302c;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.LeaveRequestButton:hover {
+  opacity:1;
+}
+* {
+  box-sizing: border-box;
+}
+
+
+
+

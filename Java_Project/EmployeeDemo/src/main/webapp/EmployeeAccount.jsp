@@ -7,20 +7,21 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+
 <link rel = "stylesheet"
    type = "text/css"
-   href = "View/profile.css" />
+   href = "profile.css" />
    
 <link rel = "stylesheet"
    type = "text/css"
-   href = "View/Template.css" />
+   href = "Template.css" />
       
    
 </head>
 <h1> <center> EMP Management System </center></h1>
 
 <body>
-<img alt="#" src="Image/profile.jsp">
+<img  src="im1.jpeg">
 
 	<table class="center">
 	
@@ -85,23 +86,27 @@
 	<c:param name="birthday" value="${birthday}"/>
 	<c:param name="username" value="${username}"/>
 	<c:param name="password" value="${password}"/>
-	
+	<c:param name="usertype" value="${usertype}"/>
 </c:url>
 
 <%--=detect update page--%>
 
 <div class="sidenav">
-<a href ="${employeeupdate}">Update My Details</a>
 
-<a href="${empdelete}">Remove Employee</a> 
-
+<a href ="${employeeupdate}">Update EMP Details</a>
 <a href="EmployeeAdd.jsp">Add Employee</a>
-
+<a href="${empdelete}">Remove Employee</a>
+<br>
+<br>
 <a href="LoginKPIDashboard.jsp">KPI Dash Board</a>
+<br>
+<a href="login.jsp">Login</a>
 
-<a href="AddKPI.jsp">Add KPI Details</a>
+</a>-->
+
 <br>
 </div>
+
 
 <%--Delete account --%>
 <c:url value="DeleteEmployee.jsp" var="empdelete">
@@ -114,8 +119,9 @@
 	<c:param name="birthday" value="${birthday}"/>
 	<c:param name="username" value="${username}"/>
 	<c:param name="password" value="${password}"/>
-	
+	<c:param name="usertype" value="${usertype}"/>
 </c:url>
+
 
 
 

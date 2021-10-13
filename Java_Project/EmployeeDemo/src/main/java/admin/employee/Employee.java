@@ -10,9 +10,10 @@ public class Employee {
 	private String birthday;
 	private String username;
 	private String password;
+	private String usertype;
 	
 	public Employee(int id, String name, String address ,String phone, String email, String designation,String birthday,String username,
-			String password) {
+			String password,String usertype) {
 		this.id = id;
 		this.name = name;
 		this.address = address;
@@ -22,6 +23,7 @@ public class Employee {
 		this.birthday = birthday;
 		this.username = username;
 		this.password = password;
+		this.usertype = usertype;
 	}
 
 	public int getId() {
@@ -60,6 +62,9 @@ public class Employee {
 		return password;
 	}
 
+	public String getUsertype() {
+		return usertype;
+	}
 	
 	
 }//end class

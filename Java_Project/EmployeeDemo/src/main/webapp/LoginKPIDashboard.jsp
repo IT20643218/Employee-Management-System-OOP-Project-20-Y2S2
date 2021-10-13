@@ -5,14 +5,20 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
+<link rel = "stylesheet"
+   type = "text/css"
+   href = "View/login.css" />
+   
 </head>
 <body>
 
 
     <div class="center">
-      <h1>Login</h1>
+      <h1>Login <br>KPI Dash Board</h1>
 	  
-      <form action="KPI" method="post">
+      <form action="KPI01" method="post">
 	  
         <div class="txt_field">
           <input type="text" name="uid" placeholder="Enter EMP ID" >

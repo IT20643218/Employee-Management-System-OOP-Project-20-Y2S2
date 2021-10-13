@@ -47,6 +47,7 @@ public class EmployeeDBUtil {
 		}
 		return isSuccess;
 	}
+	
 	public static List<Employee> getEmployee(String username){
 		
 		ArrayList<Employee> emp = new ArrayList<>();
@@ -69,8 +70,9 @@ public class EmployeeDBUtil {
 				String birthday = results.getString(7); 
 				String usernameU = results.getString(8);
 				String passwordU = results.getString(9);
+				String usertype = results.getString(10);
 				
-				Employee e = new Employee(id,name,address,phone,email,designation,birthday,usernameU,passwordU);
+				Employee e = new Employee(id,name,address,phone,email,designation,birthday,usernameU,passwordU,usertype);
 				emp.add(e);
 			}
 		}
@@ -80,9 +82,9 @@ public class EmployeeDBUtil {
 		return emp;
 	}
 
-	
+
 	//insert customer
-	public static boolean insertemployee(String name,String address,String phone,String email,String designation ,String birthday,String username,String password ) {
+	public static boolean insertemployee(String name,String address,String phone,String email,String designation ,String birthday,String username,String password,String usertype ) {
 		
 		boolean isSuccess = false;
 						
@@ -92,7 +94,7 @@ public class EmployeeDBUtil {
 					con = DBConnect.getConnection();
 					state =con.createStatement();
 					
-					String sql = "insert into employee values (0,'"+name+"','"+address+"','"+phone+"','"+email+"','"+designation+"','"+birthday+"','"+username+"','"+password+"')";
+					String sql = "insert into employee values (0,'"+name+"','"+address+"','"+phone+"','"+email+"','"+designation+"','"+birthday+"','"+username+"','"+password+"','"+usertype+"')";
 					int rs = state.executeUpdate(sql);
 					
 					if(rs > 0) {
@@ -135,7 +137,8 @@ public class EmployeeDBUtil {
 		}
 		
 		return isSuccess;
-	}//end updatecustomer method
+	}//end update method
+	
 	
 	//data retrieve method
 	public static List<Employee> getEmployeeDetails(String id){
@@ -161,8 +164,9 @@ public class EmployeeDBUtil {
 				String birthday = rs.getString(7);
 				String username = rs.getString(8);
 				String password = rs.getString(9);
+				String usertype = rs.getString(10);
 				
-				Employee e = new Employee(id1,name,address,phone,email,designation,birthday,username,password);
+				Employee e = new Employee(id1,name,address,phone,email,designation,birthday,username,password,usertype);
 				emp.add(e);
 			}
 		}
@@ -173,7 +177,7 @@ public class EmployeeDBUtil {
 	}
 	
 	//delete employee
-	public static boolean deleteEmployee(String id) {
+	public static boolean DeleteEmployee(String id) {
 		
 		int convertID = Integer.parseInt(id);
 		
@@ -183,9 +187,9 @@ public class EmployeeDBUtil {
 			state = con.createStatement();
 			
 			String sql = "delete from employee where id ='"+convertID+"'";
-			int r = state.executeUpdate(sql);
+			int rs = state.executeUpdate(sql);
 			
-			if(r > 0) {
+			if(rs > 0) {
 				isSuccess = true;
 			}
 			else {
@@ -197,6 +201,7 @@ public class EmployeeDBUtil {
 		}
 		return isSuccess;
 	}
+	
 	
 	//Employee KPI
 	public static List<KPIDetails> validate(String userName,String passWord){
@@ -217,8 +222,9 @@ public class EmployeeDBUtil {
 						String basicsalary = rs.getString(3);
 						String monthlytarget = rs.getString(4);
 						String targetachivment = rs.getString(5);
+						String monthlyincentive = rs.getString(6);
 						
-						KPIDetails k = new KPIDetails(username,password,basicsalary,monthlytarget,targetachivment);
+						KPIDetails k = new KPIDetails(username,password,basicsalary,monthlytarget,targetachivment,monthlyincentive);
 						kpi.add(k);
 					}
 				}catch(Exception e) {
@@ -230,7 +236,7 @@ public class EmployeeDBUtil {
 	}
 	
 	//Add employee KPI
-	public static boolean addkpi(String username,String password,String basicsalary,String monthlytarget,String targetachivement,String monthlyincentive) {
+	public static boolean addkpi(String username,String password,String basicsalary,String monthlytarget,String targetachivment,String monthlyincentive) {
 			
 			boolean Success = false;
 										
@@ -238,7 +244,7 @@ public class EmployeeDBUtil {
 						con= DBConnect.getConnection();
 						state=con.createStatement();
 						
-						String sql = "insert into empkpi values ('"+username+"','"+password+"','"+basicsalary+"','"+monthlytarget+"','"+targetachivement+"','"+monthlyincentive+"')";
+						String sql = "insert into empkpi values ('"+username+"','"+password+"','"+basicsalary+"','"+monthlytarget+"','"+targetachivment+"','"+monthlyincentive+"')";
 						int rs = state.executeUpdate(sql);
 						
 						if(rs > 0) {
@@ -255,4 +261,82 @@ public class EmployeeDBUtil {
 			return Success;
 		}
 	
+	//Update KPI
+	public static boolean updatekpi(String username,String password,String basicsalary,String monthlytarget,String targetachivment,String monthlyincentive) {
+		
+		try {
+			con=DBConnect.getConnection();
+			state = con.createStatement();
+			
+			String sql ="update empkpi set password='"+password+"',basicsalary='"+basicsalary+"',monthlytarget='"+monthlytarget+"',targetachivment='"+targetachivment+"',monthlyincentive='"+monthlyincentive+"'"
+					+"where username ='"+username+"'"; 
+			
+			int ab = state.executeUpdate(sql);
+			
+			if (ab >0) {
+				isSuccess = true;
+			}else {
+				isSuccess = false;
+			}
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+		return isSuccess;
+	}
+	
+	//KPI data retrieve method
+	public static List<KPIDetails> getKPIDetails(String username){
+		
+		ArrayList<KPIDetails> kp = new ArrayList<>();
+		try {
+			con = DBConnect.getConnection();
+			state =con.createStatement();
+			
+			String sql = "select * from empkpi where username='"+username+"'";
+			rs = state.executeQuery(sql);
+			
+			while(rs.next()) {
+				String username1 = rs.getString(1);
+				String password = rs.getString(2);
+				String basicsalary = rs.getString(3);
+				String monthlytarget = rs.getString(4);
+				String targetachivment = rs.getString(5);
+				String monthlyincentive = rs.getString(6);
+				
+				KPIDetails k = new KPIDetails(username1,password,basicsalary,monthlytarget,targetachivment,monthlyincentive);
+				kp.add(k);
+			}
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return kp;
+	}
+	
+	//Delete KPI Details
+	public static boolean DeleteKPI(String username){
+	
+		//int convert = Integer.parseInt(username);
+		
+		try {
+			con = DBConnect.getConnection();
+			state = con.createStatement();
+			
+			String sql = "delete from empkpi where username='"+username+"'";
+			int rs = state.executeUpdate(sql);
+			
+			if (rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+		}
+		catch(Exception e) {
+			
+		}
+		return isSuccess;
+	}
 }//end EmployeeDBUtill class

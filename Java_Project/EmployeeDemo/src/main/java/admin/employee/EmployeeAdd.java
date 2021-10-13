@@ -26,12 +26,13 @@ public class EmployeeAdd extends HttpServlet {
 		String birthday =request.getParameter("birthday");
 		String username =request.getParameter("username");
 		String password =request.getParameter("password");
+		String usertype =request.getParameter("usertype");
 		
 		boolean isTrue;
-		isTrue = EmployeeDBUtil.insertemployee(name, address, phone, email, designation, birthday, username, password);
+		isTrue = EmployeeDBUtil.insertemployee(name, address, phone, email, designation, birthday, username, password,usertype);
 		
 		if (isTrue == true) {
-			RequestDispatcher dis = request.getRequestDispatcher("success.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("EmployeeAccount.jsp");
 			dis.forward(request, response);
 			
 		}else {

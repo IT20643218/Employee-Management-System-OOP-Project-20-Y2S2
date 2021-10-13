@@ -19,16 +19,16 @@ public class AddKPIServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-			String username = request.getParameter("uid");
-			String password = request.getParameter("pass");
+			String username = request.getParameter("username");
+			String password = request.getParameter("password");
 			String basicsalary = request.getParameter("basicsalary");
 			String monthlytarget = request.getParameter("monthlytarget");
-			String targetachivement = request.getParameter("targetachivement");
+			String targetachivment = request.getParameter("targetachivment");
 			String monthlyincentive = request.getParameter("monthlyincentive");
 			
 			boolean ATrue;
 			
-			ATrue = EmployeeDBUtil.addkpi(username, password, basicsalary, monthlytarget, targetachivement, monthlyincentive);
+			ATrue = EmployeeDBUtil.addkpi(username, password, basicsalary, monthlytarget, targetachivment, monthlyincentive);
 			
 			if(ATrue==true) {
 				RequestDispatcher di = request.getRequestDispatcher("success.jsp");

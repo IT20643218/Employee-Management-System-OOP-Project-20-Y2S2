@@ -25,7 +25,7 @@ public class DeleteEmployeeServlet extends HttpServlet {
 		
 		boolean isTrue;
 		
-		isTrue = EmployeeDBUtil.deleteEmployee(id);
+		isTrue = EmployeeDBUtil.DeleteEmployee(id);
 		
 		if(isTrue == true) {
 			RequestDispatcher dispa = request.getRequestDispatcher("EmployeeAdd.jsp");

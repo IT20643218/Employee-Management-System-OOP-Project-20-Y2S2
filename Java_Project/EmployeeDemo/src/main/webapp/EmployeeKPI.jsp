@@ -9,13 +9,34 @@
 <body>
 <h1>Employee KPI</h1>
 <form action="Add" method="post">
+<table>
 
-ID:<input type="text" name ="id"><br>
-Name:<input type="text" name="name"><br>
-Basic Salary:<input type="text" name="basicsalary"><br>
-Monthly Salary:<input type="text" name="monthlytarget"><br>
-Monthly Target Achievement:<input type="text" name="targetachivement"><br>
+<tr>
+<td>ID:</td>
+<td><input type="text" name ="id"></td>
+</tr>
 
+<tr>
+<td>Name:</td>
+<td><input type="text" name="name"></td>
+</tr>
+
+<tr>
+<td>Basic Salary:</td>
+<td><input type="text" name="basicsalary"></td>
+</tr>
+
+<tr>
+<td>Monthly Salary:</td>
+<td><input type="text" name="monthlytarget"></td>
+</tr>
+
+<tr>
+<td>Monthly Target Achievement:</td>
+<td><input type="text" name="targetachivment"></td>
+</tr>
+
+</table>
 <input type="submit" name="sumbit" value="Add Employee KPI">
 </form>
 

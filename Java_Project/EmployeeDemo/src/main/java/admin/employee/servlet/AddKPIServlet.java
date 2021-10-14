@@ -16,9 +16,9 @@ import admin.employee.Util.EmployeeDBUtil;
 public class AddKPIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	//AddKPIServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+			//catch Data
 			String username = request.getParameter("username");
 			String password = request.getParameter("password");
 			String basicsalary = request.getParameter("basicsalary");
@@ -30,6 +30,7 @@ public class AddKPIServlet extends HttpServlet {
 			
 			ATrue = EmployeeDBUtil.addkpi(username, password, basicsalary, monthlytarget, targetachivment, monthlyincentive);
 			
+			//Checked and Validation
 			if(ATrue==true) {
 				RequestDispatcher di = request.getRequestDispatcher("success.jsp");
 				di.forward(request, response);
@@ -40,4 +41,4 @@ public class AddKPIServlet extends HttpServlet {
 			}
 		}
 
-}
+}//End AddKPIServlet

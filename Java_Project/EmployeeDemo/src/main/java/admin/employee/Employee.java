@@ -1,5 +1,6 @@
 package admin.employee;
 
+//Employee class -Using Encapsulation OOP Concept
 public class Employee {
 	private int id;
 	private String name;
@@ -12,6 +13,7 @@ public class Employee {
 	private String password;
 	private String usertype;
 	
+	//full args constructor
 	public Employee(int id, String name, String address ,String phone, String email, String designation,String birthday,String username,
 			String password,String usertype) {
 		this.id = id;
@@ -26,6 +28,7 @@ public class Employee {
 		this.usertype = usertype;
 	}
 
+	//setters
 	public int getId() {
 		return id;
 	}

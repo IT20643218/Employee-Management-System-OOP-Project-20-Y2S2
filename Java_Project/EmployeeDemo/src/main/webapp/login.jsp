@@ -8,7 +8,7 @@
 
 <link rel = "stylesheet"
    type = "text/css"
-   href = "View/login.css" />
+   href = "login.css" />
    
 </head>
 
@@ -16,6 +16,7 @@
     <div class="center">
       <h1>Login</h1>
 	  
+	  <!--Logging form-->
       <form action="log" method="post">
 	  
         <div class="txt_field">

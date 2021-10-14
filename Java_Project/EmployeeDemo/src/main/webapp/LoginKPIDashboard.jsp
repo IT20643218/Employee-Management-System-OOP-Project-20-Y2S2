@@ -9,7 +9,7 @@
 
 <link rel = "stylesheet"
    type = "text/css"
-   href = "View/login.css" />
+   href = "login.css" />
    
 </head>
 <body>

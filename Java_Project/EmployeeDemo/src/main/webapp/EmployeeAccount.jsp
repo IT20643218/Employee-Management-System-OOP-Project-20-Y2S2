@@ -96,10 +96,9 @@
 <a href ="${employeeupdate}">Update EMP Details</a>
 <a href="EmployeeAdd.jsp">Add Employee</a>
 <a href="${empdelete}">Remove Employee</a>
-<br>
-<br>
 <a href="LoginKPIDashboard.jsp">KPI Dash Board</a>
-<br>
+<a href="Request Leaving.jsp">Request Leaving</a>
+<a href="Search My Leaving.jsp">Search My Leaving</a>
 <a href="login.jsp">Login</a>
 
 </a>-->

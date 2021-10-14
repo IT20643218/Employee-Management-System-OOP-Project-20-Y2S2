@@ -18,7 +18,7 @@ import admin.employee.Util.EmployeeDBUtil;
 public class UpdateKPIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	//UpdateKPIServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -31,6 +31,7 @@ public class UpdateKPIServlet extends HttpServlet {
 		
 		istrue=EmployeeDBUtil.updatekpi(username, password, basicsalary, monthlytarget, targetachivment, monthlyincentive);
 		
+		//validate and checked
 		if (istrue == true) {
 			List<KPIDetails> kpidetails = EmployeeDBUtil.getKPIDetails(username);
 			request.setAttribute("kpidetails", kpidetails);
@@ -46,4 +47,4 @@ public class UpdateKPIServlet extends HttpServlet {
 		}
 	}
 
-}
+}//End UpdateKPIServlet

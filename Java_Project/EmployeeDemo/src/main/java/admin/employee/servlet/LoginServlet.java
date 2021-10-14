@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//Display javascript error
+		//Display java script error
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
@@ -34,7 +34,9 @@ public class LoginServlet extends HttpServlet {
 		String usertype = request.getParameter("gender");
 		boolean isTrue;
 		
+		//Catch DB details from Model class
 		isTrue = EmployeeDBUtil.validate(username, password,usertype);
+		
 		
 		if(isTrue == true) {
 			List<Employee> EmployeeDetails = EmployeeDBUtil.getEmployee(username);

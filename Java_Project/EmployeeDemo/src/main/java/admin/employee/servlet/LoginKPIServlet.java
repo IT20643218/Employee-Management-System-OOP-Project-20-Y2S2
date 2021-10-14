@@ -1,6 +1,7 @@
 package admin.employee.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -20,11 +21,14 @@ public class LoginKPIServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		
+				
+		//catch user name and password
 		String username = request.getParameter("uid"); 
 		String password = request.getParameter("pass");
 				
-		
+		//Exception Handling
 		try {
 			List<KPIDetails> kpidetails = EmployeeDBUtil.validate(username, password);
 			request.setAttribute("kpidetails", kpidetails);
@@ -36,6 +40,7 @@ public class LoginKPIServlet extends HttpServlet {
 		
 		RequestDispatcher dis = request.getRequestDispatcher("EmployeeKPIDashboard.jsp"); 
 		dis.forward(request, response);
+		
 	}
 
-}
+}//end loginKPIServlet

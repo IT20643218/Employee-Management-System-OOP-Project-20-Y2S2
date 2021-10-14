@@ -8,7 +8,7 @@
 
 <link rel = "stylesheet"
    type = "text/css"
-   href = "View/login.css" />
+   href = "login.css" />
    
 </head>
 
@@ -16,8 +16,8 @@
     <div class="center">
       <h1>New Employee Add Successfully</h1>
 	 	
-	 	<a href="EmployeeKPIDashboard.jsp">	
-        <input class="ab" type="submit" name="submit" value="KPI DashBoard">
+	 	<a href="AddKPI.jsp">	
+        <input class="ab" type="submit" name="submit" value="ADD KPI Details">
         </a>
         <div class="signup_link">
          We Work Together 

@@ -15,7 +15,7 @@ import admin.employee.Util.EmployeeDBUtil;
 public class EmployeeAdd extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	//EmployeeAdd
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String name =request.getParameter("name");
@@ -42,4 +42,4 @@ public class EmployeeAdd extends HttpServlet {
 		}
 	}
 
-}
+}//End EmployeeAdd class

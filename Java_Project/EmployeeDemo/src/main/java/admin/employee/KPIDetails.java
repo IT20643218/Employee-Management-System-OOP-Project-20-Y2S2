@@ -1,5 +1,6 @@
 package admin.employee;
 
+//KPIDetails class -Using Encapsulation OOP Concept
 public class KPIDetails {
 	private String username;
 	private String password;
@@ -8,6 +9,7 @@ public class KPIDetails {
 	private String targetachivment;
 	private String monthlyincentive;
 	
+	//full args constructor
 	public KPIDetails(String username, String password, String basicsalary, String monthlytarget,
 			String targetachivment,String monthlyincentive) {
 		
@@ -19,6 +21,7 @@ public class KPIDetails {
 		this.monthlyincentive = monthlyincentive;
 	}
 
+	//Setters
 	public String getUsername() {
 		return username;
 	}

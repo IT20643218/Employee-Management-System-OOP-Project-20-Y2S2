@@ -18,7 +18,7 @@ import admin.employee.Util.EmployeeDBUtil;
 public class DeleteKPIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+	//DeleteKPIServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 		String username = request.getParameter("username");
@@ -27,6 +27,7 @@ public class DeleteKPIServlet extends HttpServlet {
 			
 			isTrue = EmployeeDBUtil.DeleteKPI(username);
 			
+			//checked and validation
 			if(isTrue == true) {
 				RequestDispatcher disp = request.getRequestDispatcher("AddKPI.jsp");
 				disp.forward(request, response);
@@ -40,4 +41,4 @@ public class DeleteKPIServlet extends HttpServlet {
 
 	}
 
-}
+}//End DeleteKPIServlet
